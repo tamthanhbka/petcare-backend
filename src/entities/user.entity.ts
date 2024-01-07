@@ -6,36 +6,36 @@ export enum Role {
   STAFF,
 }
 
-@Entity()
+@Entity('users')
 export class User extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    email: string;
+  @Column()
+  email: string;
 
-    @Column()
-    password: string;
+  @Column()
+  password: string;
 
-    @Column()
-    fullName: string;
+  @Column()
+  fullName: string;
 
-    @Column()
-    phone: string;
+  @Column()
+  phone: string;
 
-    @Column({nullable: true})
-    dateOfBirth: Date;
+  @Column({ nullable: true })
+  dateOfBirth: Date;
 
-    @Column({nullable: true})
-    avatar: string;
+  @Column({ nullable: true })
+  avatar: string;
 
-    @Column({
-        type: "enum",
-        enum: Role,
-        default: Role.USER
-    })
-    role: Role;
+  @Column({
+    type: 'enum',
+    enum: Role,
+    default: Role.USER,
+  })
+  role: Role;
 
-    @Column({type: "boolean", default: true})
-    isActive: boolean;
+  @Column({ type: 'boolean', default: true })
+  isActive: boolean;
 }
